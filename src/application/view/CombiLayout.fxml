@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="580.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.CombiLayoutController">
+   <children>
+      <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="560.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <GridPane prefHeight="564.0" prefWidth="217.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="161.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.0" minWidth="10.0" prefWidth="56.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="odds1IndicatorLabel" text="1. esemény oddsa:" visible="false" />
+                        <Label fx:id="odds2IndicatorLabel" text="2. esemény oddsa:" visible="false" GridPane.rowIndex="1" />
+                        <Label fx:id="odds3IndicatorLabel" text="3. esemény oddsa:" visible="false" GridPane.rowIndex="2" />
+                        <Label fx:id="odds4IndicatorLabel" text="4. esemény oddsa:" visible="false" GridPane.rowIndex="3" />
+                        <Label fx:id="odds5IndicatorLabel" text="5. esemény oddsa:" visible="false" GridPane.rowIndex="4" />
+                        <Label fx:id="odds6IndicatorLabel" text="6. esemény oddsa:" visible="false" GridPane.rowIndex="5" />
+                        <Label fx:id="odds7IndicatorLabel" text="7. esemény oddsa:" visible="false" GridPane.rowIndex="6" />
+                        <Label fx:id="odds8IndicatorLabel" text="8. esemény oddsa:" visible="false" GridPane.rowIndex="7" />
+                        <Label fx:id="odds9IndicatorLabel" text="9. esemény oddsa:" visible="false" GridPane.rowIndex="8" />
+                        <Label fx:id="odds10IndicatorLabel" text="10. esemény oddsa:" visible="false" GridPane.rowIndex="9" />
+                        <Label fx:id="odds11IndicatorLabel" text="11. esemény oddsa:" visible="false" GridPane.rowIndex="10" />
+                        <Label fx:id="odds12IndicatorLabel" text="12. esemény oddsa:" visible="false" GridPane.rowIndex="11" />
+                        <Label fx:id="odds13IndicatorLabel" text="13. esemény oddsa:" visible="false" GridPane.rowIndex="12" />
+                        <Label fx:id="odds14IndicatorLabel" text="14. esemény oddsa:" visible="false" GridPane.rowIndex="13" />
+                        <Label fx:id="odds15IndicatorLabel" text="15. esemény oddsa:" visible="false" GridPane.rowIndex="14" />
+                        <Label fx:id="odds16IndicatorLabel" text="16. esemény oddsa:" visible="false" GridPane.rowIndex="15" />
+                        <Label fx:id="odds17IndicatorLabel" text="17. esemény oddsa:" visible="false" GridPane.rowIndex="16" />
+                        <Label fx:id="odds18IndicatorLabel" text="18. esemény oddsa:" visible="false" GridPane.rowIndex="17" />
+                        <Label fx:id="odds19IndicatorLabel" text="19. esemény oddsa:" visible="false" GridPane.rowIndex="18" />
+                        <Label fx:id="odds20IndicatorLabel" text="20. esemény oddsa:" visible="false" GridPane.rowIndex="19" />
+                        <Label fx:id="odds1Label" text="Label" visible="false" GridPane.columnIndex="1" />
+                        <Label fx:id="odds2Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="odds3Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="odds4Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="odds5Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="odds6Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="odds7Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label fx:id="odds8Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label fx:id="odds9Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label fx:id="odds10Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label fx:id="odds11Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Label fx:id="odds12Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <Label fx:id="odds13Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <Label fx:id="odds14Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <Label fx:id="odds15Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                        <Label fx:id="odds16Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                        <Label fx:id="odds17Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                        <Label fx:id="odds18Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                        <Label fx:id="odds19Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                        <Label fx:id="odds20Label" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+                     </children>
+                  </GridPane>
+                  <ComboBox fx:id="combinations" layoutX="41.0" layoutY="208.0" prefWidth="150.0" promptText="kombináció" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="208.0" />
+                  <TextField fx:id="betField" layoutX="41.0" layoutY="170.0" prefHeight="26.0" prefWidth="150.0" promptText="Tét" style="-fx-background-color: #FFFFFF; -fx-border-color: #808282;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="170.0" />
+                  <Button fx:id="countButton" layoutX="41.0" layoutY="276.0" mnemonicParsing="false" onAction="#handleCountButton" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" text="SZÁMOL" textFill="#808282" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="276.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="41.0" layoutY="390.0" text="Nyeremény:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="390.0" />
+                  <Label fx:id="prizeLabel" layoutX="133.0" layoutY="390.0" text="Label" visible="false" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="390.0" />
+                  <TextField fx:id="oddsField" layoutX="30.0" layoutY="64.0" prefHeight="26.0" prefWidth="54.0" promptText="odds" style="-fx-background-color: #FFFFFF; -fx-border-color: #808282;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="64.0" />
+                  <Button fx:id="addOddsButton" layoutX="99.0" layoutY="64.0" mnemonicParsing="false" onAction="#handleAddOddsButton" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #FFFFFF;" text="HOZZÁAD" textFill="#808282">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
