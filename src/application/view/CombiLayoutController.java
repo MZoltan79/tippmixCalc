@@ -2,13 +2,17 @@ package application.view;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Optional;
 
 import application.Odds;
 import application.model.Ticket;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -107,9 +111,50 @@ public class CombiLayoutController {
 	Label odds19IndicatorLabel;
 	@FXML
 	Label odds20IndicatorLabel;
+	@FXML
+	CheckBox odds1CheckBox;
+	@FXML
+	CheckBox odds2CheckBox;
+	@FXML
+	CheckBox odds3CheckBox;
+	@FXML
+	CheckBox odds4CheckBox;
+	@FXML
+	CheckBox odds5CheckBox;
+	@FXML
+	CheckBox odds6CheckBox;
+	@FXML
+	CheckBox odds7CheckBox;
+	@FXML
+	CheckBox odds8CheckBox;
+	@FXML
+	CheckBox odds9CheckBox;
+	@FXML
+	CheckBox odds10CheckBox;
+	@FXML
+	CheckBox odds11CheckBox;
+	@FXML
+	CheckBox odds12CheckBox;
+	@FXML
+	CheckBox odds13CheckBox;
+	@FXML
+	CheckBox odds14CheckBox;
+	@FXML
+	CheckBox odds15CheckBox;
+	@FXML
+	CheckBox odds16CheckBox;
+	@FXML
+	CheckBox odds17CheckBox;
+	@FXML
+	CheckBox odds18CheckBox;
+	@FXML
+	CheckBox odds19CheckBox;
+	@FXML
+	CheckBox odds20CheckBox;
 	
 	private Label[] oddsLabels;
 	private Label[] oddsIndicatorLabels;
+	private CheckBox[] oddsCheckBoxes;
 	private ArrayList<Odds> odds;
 	private Ticket ticket;
 	private ArrayList<String[]> combinationTypes;
@@ -143,6 +188,12 @@ public class CombiLayoutController {
 								"18/20","19/20"};
 	@FXML
 	private void initialize() {
+		oddsField.setOnKeyPressed(event -> {
+			KeyEvent keyevent = (KeyEvent) event;
+			if (keyevent.getCode() == KeyCode.ENTER) {
+				handleAddOddsButton();
+			}
+		});
 		odds = new ArrayList<>();
 		combinationTypes  = new ArrayList<>();
 		combinationTypes.add(one);
@@ -165,8 +216,12 @@ public class CombiLayoutController {
 		combinationTypes.add(eighteen);
 		combinationTypes.add(nineteen);
 		combinationTypes.add(twenty);
+		
 		oddsLabels = new Label[20];
 		oddsIndicatorLabels = new Label[20];
+		oddsCheckBoxes = new CheckBox[20];
+		
+		
 		oddsLabels[0] = odds1Label;
 		oddsLabels[1] = odds2Label;
 		oddsLabels[4] = odds5Label;
@@ -187,6 +242,7 @@ public class CombiLayoutController {
 		oddsLabels[17] = odds18Label;
 		oddsLabels[18] = odds19Label;
 		oddsLabels[19] = odds20Label;
+		
 		oddsIndicatorLabels[0] = odds1IndicatorLabel;
 		oddsIndicatorLabels[1] = odds2IndicatorLabel;
 		oddsIndicatorLabels[2] = odds3IndicatorLabel;
@@ -207,6 +263,32 @@ public class CombiLayoutController {
 		oddsIndicatorLabels[17] = odds18IndicatorLabel;
 		oddsIndicatorLabels[18] = odds19IndicatorLabel;
 		oddsIndicatorLabels[19] = odds20IndicatorLabel;
+		
+		oddsCheckBoxes[0] = odds1CheckBox;
+		oddsCheckBoxes[1] = odds2CheckBox;
+		oddsCheckBoxes[2] = odds3CheckBox;
+		oddsCheckBoxes[3] = odds4CheckBox;
+		oddsCheckBoxes[4] = odds5CheckBox;
+		oddsCheckBoxes[5] = odds6CheckBox;
+		oddsCheckBoxes[6] = odds7CheckBox;
+		oddsCheckBoxes[7] = odds8CheckBox;
+		oddsCheckBoxes[8] = odds9CheckBox;
+		oddsCheckBoxes[9] = odds10CheckBox;
+		oddsCheckBoxes[10] = odds11CheckBox;
+		oddsCheckBoxes[11] = odds12CheckBox;
+		oddsCheckBoxes[12] = odds13CheckBox;
+		oddsCheckBoxes[13] = odds14CheckBox;
+		oddsCheckBoxes[14] = odds15CheckBox;
+		oddsCheckBoxes[15] = odds16CheckBox;
+		oddsCheckBoxes[16] = odds17CheckBox;
+		oddsCheckBoxes[17] = odds18CheckBox;
+		oddsCheckBoxes[18] = odds19CheckBox;
+		oddsCheckBoxes[19] = odds20CheckBox;
+		
+		for(CheckBox cb: oddsCheckBoxes) {
+			cb.setSelected(true);
+		}
+
 		ticket = new Ticket();
 	}
 	
@@ -231,6 +313,7 @@ public class CombiLayoutController {
 				odds.add(new Odds(temp));
 				oddsIndicatorLabels[odds.size()-1].setVisible(true);
 				oddsLabels[odds.size()-1].setVisible(true);
+				oddsCheckBoxes[odds.size()-1].setVisible(true);
 				oddsLabels[odds.size()-1].setText(oddsField.getText());
 			}
 		}
@@ -238,11 +321,13 @@ public class CombiLayoutController {
 		int numberOfOddses = odds.size();
 		System.out.println(Arrays.asList(combinationTypes.get(numberOfOddses-1)));
 		combinations.getItems().addAll(Arrays.asList(combinationTypes.get(numberOfOddses-1)));
+		oddsField.clear();
 		
 	}
 	
 	@FXML
 	private void handleCountButton() {
+		checkEventsAreWon();
 		ticket.addAllOdds(odds);
 		double bet = Double.parseDouble(betField.getText());
 		ticket.setBet(bet);
@@ -261,4 +346,16 @@ public class CombiLayoutController {
 			prizeLabel.setText(result.toString());
 		}
 	}
+	
+	public void checkEventsAreWon() {
+		for(int i = 0; i < odds.size(); i++) {
+			if(!oddsCheckBoxes[i].isSelected()) {
+				odds.get(i).setWon(false);
+			} else {
+				odds.get(i).setWon(true);
+			}
+		}
+	}
+	
+
 }

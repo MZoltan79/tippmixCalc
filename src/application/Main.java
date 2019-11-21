@@ -43,6 +43,7 @@ public class Main extends Application {
 		initMainWindow();
 		helpButton.setOnAction(e -> showInfoLayout());
 		combButton.setOnAction(e -> showCombiLayout());
+		exitButton.setOnAction(e -> Platform.exit());
 	}
 	
 	public Main() {
@@ -76,7 +77,6 @@ public class Main extends Application {
 			buttonPressed(helpButton);
 			showInfoLayout();
 			
-			exitButton.setOnAction(e -> Platform.exit());
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -90,7 +90,6 @@ public class Main extends Application {
 			AnchorPane infoPane = loader.load();
 			rightPane.setCenter(infoPane);
 			TextArea infoArea = (TextArea) loader.getNamespace().get("infoArea");
-//			infoArea.setText("szia");
 			InfoLayoutController controller = loader.getController();
 			
 		} catch (IOException e) {

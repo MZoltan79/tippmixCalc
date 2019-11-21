@@ -9,14 +9,12 @@ public class Ticket {
 	
 	
 	private List<int[]> combinations;
-	private ArrayList<Double> odds;
+	private ArrayList<Odds> odds;
 	private double bet;
-	private double sumOdds;
 	private double sumPrize;
 	
 	public Ticket() {
 		this.odds = new ArrayList<>();
-		this.sumOdds = 0;
 		this.sumPrize = 0;
 	}
 	
@@ -54,12 +52,15 @@ public class Ticket {
 	public Integer calculate(int kotes) {
 		sumPrize = 0;
 		combinations = generate(odds.size(), kotes);
-//		System.out.printf("generated %d combinations of %d items from %d \n", combinations.size(), kotes, odds.size());
 		for(int i = 0; i < combinations.size(); i++) {
 			double temp = 1;
 			double tempOdds = 0;
 			for(int j = 0; j < combinations.get(i).length; j++) {
-				temp *= odds.get(combinations.get(i)[j]);
+				if(odds.get(combinations.get(i)[j]).isWon()) {
+					temp *= odds.get(combinations.get(i)[j]).getOdds();
+				} else {
+					temp *= 0; 
+				}
 			}
 			temp = Math.round(temp*100);
 			tempOdds = temp/100;
@@ -69,7 +70,6 @@ public class Ticket {
 				return null;
 			}
 			sumPrize += tempPrize;
-//			System.out.println(i+1 + ". fogadás oddsa: " + tempOdds + " várható nyeremény: " + tempPrize + " Ft.");
 			
 		}
 		sumPrize = Math.round(sumPrize);
@@ -84,7 +84,7 @@ public class Ticket {
 		this.bet = bet;
 	}
 	
-	public void addOdds(double odds) {
+	public void addOdds(Odds odds) {
 		if(this.odds.size() < 21) {
 			this.odds.add(odds);
 		} else {
@@ -94,7 +94,7 @@ public class Ticket {
 	
 	public void addAllOdds(ArrayList<Odds> odds) {
 		this.odds.clear();
-		odds.forEach(e -> this.odds.add(e.getOdds()));
+		odds.forEach(e -> this.odds.add(e));
 	}
 	
 	public void clearOdds() {
